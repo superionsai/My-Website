@@ -88,13 +88,14 @@ h2 {
     background: #f7f7fa;
     color: #222;
     border-radius: 4px;
-    padding: 12px 6px;
+    padding: 12px 0px 12px 6px;
     font-size: 1.08rem;
     line-height: 1.7;
     box-shadow: 8px rgba(0,0,0,0.03);
     box-sizing: border-box;
 }
 #display-container {
+    padding-left: 0px;
     width: 40%;
     display: flex;
     align-items: stretch;
