@@ -2,6 +2,10 @@ html {
     font-size: 16px;
     align-items: center;
 }
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
 body {
     align-items: center;
     font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
