@@ -9,6 +9,9 @@ body {
     padding: 0;
     color: #222;
 }
+@media screen and (min_width: 768px) {
+   body { background-color: aliceblue; }
+}
 .navigation {
     text-align: right;
     width: 100%;
