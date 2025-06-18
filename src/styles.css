@@ -31,6 +31,7 @@ body {
     text-align: center;
     background: linear-gradient(to right, #1f005c, #5b0060, #870160, #ac255e, #ca485c);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease;
@@ -58,13 +59,12 @@ body {
     padding: 0 18px;
     font-size: 18px;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: transform 0.3s ease color 0.3s ease;
 }
 
 .navigation a:hover {
     color: #d1fae5;
     transform: scale(1.01);
-    transistion: transform 0.3s ease;
     cursor: pointer;
 }
 
@@ -173,6 +173,7 @@ h2 {
     text-align: left;
     background: linear-gradient(to right, #060899, #db0c73);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     position: relative;
     transition: transform 0.3s ease;
@@ -440,6 +441,6 @@ a:hover {
         word-wrap: break-word;
     }
     }
-}
+
 
 
