@@ -63,12 +63,14 @@ body {
 
 .navigation a:hover {
     color: #d1fae5;
+    transform: scale(1.01);
+    transistion: transform 0.3s ease;
     cursor: pointer;
 }
 
 #banner {
     width: 100%;
-    height: 250px;
+    height: 280px;
     object-fit: cover;
     background: linear-gradient(to right, #93c5fd, #f9a8d4);
     border-radius: 0 0 12px 12px;
@@ -252,7 +254,7 @@ a:hover {
 }
 
 #about-nav:target {
-    animation: blink 0.5s ease 1;
+    animation: blink 3s ease 3;
     border: none;
     background: #ec4899;
     outline: none;
@@ -278,7 +280,7 @@ a:hover {
     }
 
     #banner {
-        height: 160px;
+        height: 200px;
     }
 
     #header {
@@ -312,7 +314,7 @@ a:hover {
     }
 
     #banner {
-        height: 160px;
+        height: 180px;
     }
 
     #header {
@@ -350,7 +352,7 @@ a:hover {
     }
 
     #banner {
-        height: 120px;
+        height: 140px;
         object-fit: cover;
         border-radius: 0 0 10px 10px;
     }
