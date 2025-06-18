@@ -99,8 +99,6 @@ h2 {
 
 #header {
     display: flex;
-    gap: 0px;
-    margin: 24px 0px 0px 0px;
 }
 
 #subtext {
@@ -270,3 +268,173 @@ a:hover {
         color: #ffffff;
     }
 }
+
+@media screen and (max-width: 850px) and (min-width: 701px) {
+    html {
+        font-size: 15px;
+    }
+
+    #banner {
+        height: 160px;
+    }
+
+    #header {
+        flex-direction: row;
+        gap: 6px;
+        margin: 0;
+        padding: 0 10px;
+    }
+
+    #subtext {
+        width: 50%;
+        padding: 10px;
+        font-size: 1rem;
+    }
+    #subtext p {
+        margin: 0 0 8px 0;
+    }
+    #display-container {
+        width: 50%;
+        padding-left: 0;
+    }
+
+    #display {
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 700px) and (min-width: 601px) {
+    html {
+        font-size: 15px;
+    }
+
+    #banner {
+        height: 160px;
+    }
+
+    #header {
+        flex-direction: row;
+        margin: 0;
+        padding: 0 0px;
+    }
+
+    #subtext {
+        width: 45%;
+        padding: 10px;
+        font-size: 1rem;
+    }
+    #subtext p {
+        margin: 0 0 8px 0;
+    }
+    #display-container {
+        width: 55%;
+        padding-left: 0;
+    }
+
+    #display {
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    html {
+        font-size: 14px;
+    }
+
+    html, body {
+        padding: 0px !important;
+        margin: 0 !important;
+    }
+
+    #banner {
+        height: 120px;
+        object-fit: cover;
+        border-radius: 0 0 10px 10px;
+    }
+
+    .container {
+        margin: 0px 0px 0 !important;
+        padding: 16px 8px 5px !important;
+        max-width: 100% !important;
+        border-radius: 10px;
+        box-sizing: border-box;
+    }
+
+    #header {
+        flex-direction: column;
+        gap: 2px;
+        align-items: center;
+        margin: 0;
+        padding: 0 10px;
+    }
+
+    #subtext {
+        width: 100%;
+        text-align: center;
+        align-items: center;
+        font-size: 0.95rem;
+    }
+
+    #subtext p {
+        margin: 0 0 6px 0;
+    }
+    #display-container {
+        width: 100%;
+        padding-left: 0;
+        justify-content: center;
+    }
+
+    #display {
+        width: 100%;
+        height: auto;
+        max-height: 400px;
+    }
+
+    #Extras {
+        display: block;
+        overflow-x: auto;
+        width: 100%;
+    }
+
+   #Extras {
+        table-layout: fixed;
+        width: 100%;
+    }
+
+    /* Hide the Year column (3rd column) */
+    #Extras th:nth-child(3),
+    #Extras td:nth-child(3) {
+        display: none;
+    }
+
+    /* Adjust column widths */
+    #Extras th:nth-child(1),
+    #Extras td:nth-child(1) {
+        width: 20%; /* Event */
+    }
+
+    #Extras th:nth-child(2),
+    #Extras td:nth-child(2) {
+        width: 20%; /* Organisation */
+    }
+
+    #Extras th:nth-child(4),
+    #Extras td:nth-child(4) {
+        width: 20%; /* Position */
+    }
+
+    #Extras th:nth-child(5),
+    #Extras td:nth-child(5) {
+        width: 40%; /* Details */
+    }
+
+    #Extras th,
+    #Extras td {
+        font-size: 0.85rem;
+        padding: 8px;
+        word-wrap: break-word;
+    }
+    }
+}
+
+
