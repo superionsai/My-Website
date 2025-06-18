@@ -65,7 +65,7 @@ body {
 
 #banner {
     width: 100%;
-    height: 250px;
+    height: 280px;
     object-fit: cover;
     background: linear-gradient(to right, #93c5fd, #f9a8d4);
     border-radius: 0 0 12px 12px;
@@ -275,7 +275,7 @@ a:hover {
     }
 
     #banner {
-        height: 160px;
+        height: 200px;
     }
 
     #header {
@@ -309,7 +309,7 @@ a:hover {
     }
 
     #banner {
-        height: 160px;
+        height: 180px;
     }
 
     #header {
@@ -347,7 +347,7 @@ a:hover {
     }
 
     #banner {
-        height: 120px;
+        height: 140px;
         object-fit: cover;
         border-radius: 0 0 10px 10px;
     }
