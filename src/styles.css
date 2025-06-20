@@ -12,18 +12,19 @@
     z-index: 9999;
     width: 100%;
     height: 40px;
-    background: linear-gradient(90deg, #12134f, #932697);
+    background: transparent;
     backdrop-filter: blur(10px);
     padding-top: 6px;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
 }
 
 .navigation a {
-    color: #ffffff;
+    color: #a296dc;
     padding: 0 18px;
     font-size: 18px;
     text-decoration: none;
-    transition: transform 0.3s ease color 0.3s ease;
+    transition: transform 0.3s ease, color 0.3s ease;
+    mix-blend-mode: difference;
 }
 
 .navigation a:hover {
@@ -44,11 +45,12 @@ body {
 
 body {
     font-family: "Segoe UI", Helvetica, Arial, sans-serif;
-    background: #f0f4f8;
+    background: #0b25e952;
     margin: 0;
     padding: 0;
     color: #111827;
-    padding-top: 30px; /* navbar height (40px) + padding-top (6px) */
+    padding-top: 0px;
+    /* navbar height (40px) + padding-top (6px) */
 }
 
 .name-heading {
@@ -78,6 +80,26 @@ body {
     background: linear-gradient(to right, #93c5fd, #f9a8d4);
     border-radius: 0 0 12px 12px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+body.loaded #banner {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+#main-content {
+    opacity: 0;
+    transform: scale(0);
+    transition: transform 1s ease, opacity 1s ease;
+    /* delay to wait for banner */
+}
+
+body.loaded #main-content {
+    opacity: 1;
+    transform: scale(1);
 }
 
 .container {
@@ -300,9 +322,11 @@ a:hover {
         padding: 10px;
         font-size: 1rem;
     }
+
     #subtext p {
         margin: 0 0 8px 0;
     }
+
     #display-container {
         width: 50%;
         padding-left: 0;
@@ -317,13 +341,16 @@ a:hover {
     html {
         font-size: 15px;
     }
+
     body {
-        padding-top: 20px; 
+        padding-top: 20px;
     }
+
     .navigation {
         height: 30px;
         padding-top: 1px;
     }
+
     #banner {
         height: 200px;
     }
@@ -339,9 +366,11 @@ a:hover {
         padding: 10px;
         font-size: 1rem;
     }
+
     #subtext p {
         margin: 0 0 8px 0;
     }
+
     #display-container {
         width: 55%;
         padding-left: 0;
@@ -357,17 +386,21 @@ a:hover {
         font-size: 14px;
     }
 
-    html, body {
+    html,
+    body {
         padding: 0px !important;
         margin: 0 !important;
     }
+
     body {
-        padding-top: 20px; 
+        padding-top: 20px;
     }
+
     .navigation {
         height: 30px;
         padding-top: 1px;
     }
+
     #banner {
         height: 180px;
         object-fit: cover;
@@ -400,6 +433,7 @@ a:hover {
     #subtext p {
         margin: 0 0 6px 0;
     }
+
     #display-container {
         width: 100%;
         padding-left: 0;
@@ -418,7 +452,7 @@ a:hover {
         width: 100%;
     }
 
-   #Extras {
+    #Extras {
         table-layout: fixed;
         width: 100%;
     }
@@ -432,22 +466,26 @@ a:hover {
     /* Adjust column widths */
     #Extras th:nth-child(1),
     #Extras td:nth-child(1) {
-        width: 20%; /* Event */
+        width: 20%;
+        /* Event */
     }
 
     #Extras th:nth-child(2),
     #Extras td:nth-child(2) {
-        width: 20%; /* Organisation */
+        width: 20%;
+        /* Organisation */
     }
 
     #Extras th:nth-child(4),
     #Extras td:nth-child(4) {
-        width: 20%; /* Position */
+        width: 20%;
+        /* Position */
     }
 
     #Extras th:nth-child(5),
     #Extras td:nth-child(5) {
-        width: 40%; /* Details */
+        width: 40%;
+        /* Details */
     }
 
     #Extras th,
@@ -456,7 +494,4 @@ a:hover {
         padding: 8px;
         word-wrap: break-word;
     }
-    }
-
-
-
+}
