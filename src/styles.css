@@ -1,4 +1,4 @@
-/* Modern Professional Portfolio Styles - Enhanced */
+/* Modern Professional Portfolio Styles - Enhanced & Fixed */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
@@ -30,12 +30,14 @@ body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   background: var(--dark-bg);
   color: var(--text-primary);
-  line-height: 1.6;
+  line-height: 1.7; /* Increased for better readability */
   overflow-x: hidden;
   scroll-behavior: smooth;
   opacity: 0;
   transform: translateY(20px);
   transition: var(--transition-smooth);
+  word-wrap: break-word; /* Prevent overflow */
+  hyphens: auto; /* Better word breaking */
 }
 
 body.loaded {
@@ -101,6 +103,9 @@ body::after {
   border-bottom: 1px solid var(--border-color);
   text-align: right;
   transition: var(--transition-smooth);
+  /* Ensure no overflow */
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .navigation a {
@@ -115,6 +120,7 @@ body::after {
   position: relative;
   padding: 8px 12px;
   border-radius: 20px;
+  display: inline-block; /* Prevent line breaks */
 }
 
 .navigation a::before {
@@ -149,6 +155,7 @@ body::after {
   filter: brightness(0.7) contrast(1.1);
   transition: var(--transition-smooth);
   position: relative;
+  z-index: 1; /* Ensure above background */
 }
 
 #banner::after {
@@ -159,7 +166,7 @@ body::after {
   width: 100%;
   height: 100%;
   background: linear-gradient(to bottom, transparent 0%, rgba(10, 10, 10, 0.6) 100%);
-  z-index: 1;
+  z-index: 2;
 }
 
 #banner:hover {
@@ -167,18 +174,21 @@ body::after {
   transform: scale(1.02);
 }
 
-/* Welcome Text - Integrated as overlay */
+/* Welcome Text - Fixed positioning and responsiveness */
 #main-content h5 {
   position: absolute;
-  top: 20%;
+  top: 25%; /* Adjusted for better centering on mobile */
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 4vw, 1.5rem); /* Responsive font size */
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.8);
-  z-index: 5;
+  color: rgba(255, 255, 255, 0.9);
+  z-index: 3;
   text-align: center;
+  max-width: 90%; /* Prevent overflow */
+  padding: 0 10px;
   animation: fadeInUp 1s ease-out 0.5s both;
+  line-height: 1.4;
 }
 
 @keyframes fadeInUp {
@@ -218,6 +228,9 @@ body::after {
   box-shadow: var(--shadow-glass);
   position: relative;
   overflow: hidden;
+  /* Better text handling */
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
 .container::before {
@@ -254,6 +267,7 @@ body::after {
   margin-bottom: 10px;
   position: relative;
   animation: glow 2s ease-in-out infinite alternate;
+  line-height: 1.2; /* Tighter for headers */
 }
 
 @keyframes glow {
@@ -268,6 +282,7 @@ body::after {
   text-transform: uppercase;
   letter-spacing: 2px;
   position: relative;
+  line-height: 1.3;
 }
 
 .tagline::after {
@@ -294,7 +309,7 @@ body::after {
 
 #subtext {
   font-size: 16px;
-  line-height: 1.7;
+  line-height: 1.8; /* Increased for better paragraph flow */
   color: var(--text-secondary);
 }
 
@@ -302,6 +317,8 @@ body::after {
   margin-bottom: 20px;
   transition: var(--transition-smooth);
   position: relative;
+  max-width: 100%; /* Ensure full width */
+  overflow-wrap: break-word;
 }
 
 #subtext p:hover {
@@ -340,6 +357,8 @@ body::after {
   border-radius: 12px;
   border-left: 3px solid transparent;
   transition: var(--transition-smooth);
+  flex-wrap: wrap; /* Allow wrapping on small screens */
+  justify-content: flex-start;
 }
 
 #subtext p[style*="display: flex"]:hover {
@@ -351,6 +370,7 @@ body::after {
   min-width: 140px;
   color: var(--text-accent);
   font-weight: 500;
+  flex-shrink: 0; /* Prevent shrinking */
 }
 
 /* Profile Display - Enhanced with floating animation */
@@ -410,6 +430,7 @@ body::after {
 .section {
   margin-bottom: 80px;
   animation: fadeInUp 1s ease-out both;
+  word-wrap: break-word;
 }
 
 .section:nth-child(even) {
@@ -429,6 +450,7 @@ body::after {
   -webkit-text-fill-color: transparent;
   position: relative;
   padding-bottom: 10px;
+  line-height: 1.2;
 }
 
 .section-title::after {
@@ -440,6 +462,59 @@ body::after {
   height: 3px;
   background: var(--tertiary-gradient);
   border-radius: 2px;
+}
+
+/* Experience Section Specific - Card-like for job entries */
+.experience-entry {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20px;
+  animation: slideInLeft 0.8s ease-out both;
+  word-wrap: break-word;
+}
+
+.experience-entry:nth-of-type(1) { animation-delay: 0.1s; }
+.experience-entry:nth-of-type(2) { animation-delay: 0.2s; }
+.experience-entry:nth-of-type(3) { animation-delay: 0.3s; }
+.experience-entry:nth-of-type(4) { animation-delay: 0.4s; }
+.experience-entry:nth-of-type(5) { animation-delay: 0.5s; }
+.experience-entry:nth-of-type(6) { animation-delay: 0.6s; }
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.experience-entry::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 0;
+  background: var(--accent-gradient);
+  transition: var(--transition-smooth);
+}
+
+.experience-entry:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-card);
+  border-color: var(--text-accent);
+}
+
+.experience-entry:hover::before {
+  height: 100%;
 }
 
 .section ul {
@@ -458,6 +533,8 @@ body::after {
   position: relative;
   overflow: hidden;
   animation: slideInLeft 0.8s ease-out both;
+  word-wrap: break-word;
+  line-height: 1.6;
 }
 
 .section ul li:nth-child(1) { animation-delay: 0.1s; }
@@ -466,17 +543,6 @@ body::after {
 .section ul li:nth-child(4) { animation-delay: 0.4s; }
 .section ul li:nth-child(5) { animation-delay: 0.5s; }
 .section ul li:nth-child(6) { animation-delay: 0.6s; }
-
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
 
 .section ul li::before {
   content: '';
@@ -519,11 +585,12 @@ body::after {
   font-weight: 600;
   font-size: 1.1rem;
   color: var(--text-primary);
-  margin-top: 15px;
+  margin-top: 0; /* Reset */
   margin-bottom: 8px;
   background: var(--accent-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  line-height: 1.3;
 }
 
 .job-role + p,
@@ -532,6 +599,8 @@ body::after {
   color: var(--text-secondary);
   margin-bottom: 15px;
   font-size: 0.95rem;
+  line-height: 1.5;
+  word-wrap: break-word;
 }
 
 .location {
@@ -546,7 +615,34 @@ body::after {
   font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 1px;
+  margin-bottom: 10px;
 }
+
+/* Education specific - Apply card to each entry */
+.education-entry {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20px;
+  animation: slideInLeft 0.8s ease-out both;
+  word-wrap: break-word;
+}
+
+.education-entry:nth-of-type(1) { animation-delay: 0.1s; }
+.education-entry:nth-of-type(2) { animation-delay: 0.2s; }
+.education-entry:nth-of-type(3) { animation-delay: 0.3s; }
+
+.education-entry:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-card);
+  border-color: var(--text-accent);
+}
+
+/* Skills and other ul sections already handled */
 
 /* Footer - Styled */
 footer {
@@ -556,11 +652,13 @@ footer {
   border-top: 1px solid var(--border-color);
   margin-top: 60px;
   font-size: 0.9rem;
+  word-wrap: break-word;
 }
 
 footer p {
   opacity: 0.7;
   transition: var(--transition-smooth);
+  max-width: 100%;
 }
 
 footer p:hover {
@@ -568,11 +666,33 @@ footer p:hover {
   color: var(--text-accent);
 }
 
-/* Responsive - Enhanced */
+/* Bottom links paragraph */
+#main-content p[style*="text-align:center"] {
+  text-align: center;
+  margin: 40px 0;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+#main-content p[style*="text-align:center"] a {
+  color: var(--text-accent);
+  text-decoration: none;
+  margin: 0 10px;
+  transition: var(--transition-smooth);
+}
+
+#main-content p[style*="text-align:center"] a:hover {
+  color: var(--text-primary);
+  text-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
+}
+
+/* Responsive - Enhanced with better mobile fixes */
 @media (max-width: 900px) {
   #header {
     grid-template-columns: 1fr;
     gap: 30px;
+    text-align: center;
   }
 
   #display {
@@ -583,6 +703,17 @@ footer p:hover {
   .container {
     padding: 40px 15px;
     margin: 0 10px;
+    border-radius: 20px; /* Softer on mobile */
+  }
+
+  #subtext p[style*="display: flex"] {
+    justify-content: center;
+    text-align: center;
+  }
+
+  #subtext p[style*="display: flex"] div:first-child {
+    min-width: auto;
+    text-align: left;
   }
 }
 
@@ -590,27 +721,64 @@ footer p:hover {
   .navigation {
     padding: 15px 20px;
     text-align: center;
+    white-space: normal; /* Allow wrapping on very small screens */
   }
 
   .navigation a {
-    margin: 0 8px;
+    margin: 0 8px 5px 8px; /* Stack if needed */
     display: inline-block;
+    font-size: 13px;
   }
 
   .name-heading {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   .section-title {
     font-size: 1.5rem;
   }
 
-  .section ul li {
+  .section ul li,
+  .experience-entry,
+  .education-entry {
     padding: 15px;
+    margin-bottom: 15px;
   }
 
   #main-content h5 {
-    font-size: 1.2rem;
-    top: 15%;
+    font-size: 1.1rem;
+    top: 20%;
+    padding: 0 5px;
+  }
+
+  #subtext {
+    font-size: 15px;
+    text-align: justify; /* Better on mobile */
+  }
+
+  .job-role + h5 {
+    font-size: 0.85rem;
+  }
+
+  /* Force better wrapping for long dates/lines */
+  .job-role + h5 {
+    white-space: normal;
+    word-break: break-word;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .container {
+    padding: 30px 10px;
+  }
+
+  #header {
+    gap: 20px;
+  }
+
+  #subtext p {
+    font-size: 14px;
+    line-height: 1.6;
   }
 }
