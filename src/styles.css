@@ -96,17 +96,18 @@ a:hover::after {
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 700;
-    background: linear-gradient(135deg, #f8fafc 0%, #cbd5e1 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     margin-bottom: 1rem;
     letter-spacing: -0.02em;
+    filter: drop-shadow(0 2px 4px rgba(255, 255, 255, 0.2));
 }
 
 p {
     margin-bottom: 1.2rem;
-    color: var(--ash-grey);
+    color: #cbd5e1;
 }
 
 /* ================== Navigation with Glassmorphism ================== */
@@ -142,6 +143,7 @@ p {
     border-radius: 8px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: inline-block;
+    color: #e2e8f0;
 }
 
 .navigation a::after {
@@ -149,9 +151,10 @@ p {
 }
 
 .navigation a:hover {
-    background: rgba(96, 165, 250, 0.15);
+    background: rgba(96, 165, 250, 0.2);
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(96, 165, 250, 0.35);
+    color: #ffffff;
 }
 
 /* ================== Header & Banner ================== */
@@ -164,7 +167,7 @@ header {
 .welcome-text {
     font-size: 1.2rem;
     margin-top: 1.5rem;
-    color: var(--text-secondary);
+    color: #cbd5e1;
     animation: fadeInUp 1s ease-out 0.3s both;
     font-weight: 400;
 }
@@ -242,7 +245,7 @@ header:hover #banner {
 .header .tagline {
     font-size: 1.5rem;
     text-align: center;
-    color: var(--text-secondary);
+    color: #cbd5e1;
     font-weight: 400;
     animation: fadeInUp 1s ease-out 0.2s both;
 }
@@ -264,28 +267,29 @@ header:hover #banner {
 .bio p {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: var(--text-secondary);
+    color: #e2e8f0;
 }
 
 .bio strong {
-    color: var(--text-primary);
+    color: var(--pure-white);
     font-weight: 600;
 }
 
 .bio .personal-info {
     margin-top: 2rem;
     padding: 1.5rem;
-    background: var(--glass-bg);
+    background: rgba(30, 41, 59, 0.6);
     backdrop-filter: blur(10px);
     border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(148, 163, 184, 0.25);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .bio .personal-info:hover {
-    background: rgba(255, 255, 255, 0.12);
+    background: rgba(51, 65, 85, 0.6);
     transform: translateY(-5px);
-    box-shadow: var(--shadow-glow);
+    box-shadow: 0 0 40px rgba(96, 165, 250, 0.3);
+    border-color: rgba(96, 165, 250, 0.4);
 }
 
 .bio .personal-info p {
@@ -298,8 +302,8 @@ header:hover #banner {
 .bio .personal-info .label {
     font-weight: 700;
     min-width: 160px;
-    color: var(--text-primary);
-    background: var(--accent-gradient);
+    color: var(--ice-blue);
+    background: var(--secondary-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -318,9 +322,9 @@ header:hover #banner {
     left: -20px;
     right: -20px;
     bottom: -20px;
-    background: var(--primary-gradient);
+    background: linear-gradient(135deg, #2563eb 0%, #60a5fa 100%);
     border-radius: 50%;
-    opacity: 0.3;
+    opacity: 0.4;
     filter: blur(40px);
     animation: pulse 3s ease-in-out infinite;
 }
@@ -334,29 +338,29 @@ header:hover #banner {
     width: 100%;
     max-width: 280px;
     border-radius: 20px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 20px 60px rgba(15, 23, 42, 0.6);
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 3px solid rgba(255, 255, 255, 0.1);
+    border: 3px solid rgba(148, 163, 184, 0.3);
     position: relative;
     z-index: 1;
 }
 
 #display:hover {
     transform: translateY(-15px) scale(1.05) rotateZ(2deg);
-    box-shadow: 0 30px 80px rgba(102, 126, 234, 0.4);
-    border-color: rgba(102, 126, 234, 0.5);
+    box-shadow: 0 30px 80px rgba(37, 99, 235, 0.5), 0 0 50px rgba(96, 165, 250, 0.4);
+    border-color: rgba(96, 165, 250, 0.7);
 }
 
 /* ================== Sections ================== */
 .section {
     margin: 4rem 0;
     padding: 3rem;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(30, 41, 59, 0.6);
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
     border-radius: 24px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    box-shadow: 0 20px 60px rgba(15, 23, 42, 0.4);
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
@@ -369,7 +373,7 @@ header:hover #banner {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    background: linear-gradient(90deg, transparent, rgba(96, 165, 250, 0.15), transparent);
     transition: left 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -379,9 +383,9 @@ header:hover #banner {
 
 .section:hover {
     transform: translateY(-10px);
-    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3), var(--shadow-glow);
-    border-color: rgba(102, 126, 234, 0.3);
-    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 30px 80px rgba(15, 23, 42, 0.5), 0 0 50px rgba(37, 99, 235, 0.3);
+    border-color: rgba(96, 165, 250, 0.4);
+    background: rgba(51, 65, 85, 0.7);
 }
 
 .section-title {
@@ -389,7 +393,7 @@ header:hover #banner {
     font-weight: 700;
     margin-bottom: 2rem;
     text-align: left;
-    background: var(--primary-gradient);
+    background: linear-gradient(135deg, #f8fafc 0%, #dbeafe 50%, #60a5fa 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -400,6 +404,7 @@ header:hover #banner {
     border-image-slice: 1;
     position: relative;
     animation: fadeInLeft 0.8s ease-out;
+    filter: drop-shadow(0 2px 8px rgba(248, 250, 252, 0.3));
 }
 
 @keyframes fadeInLeft {
@@ -420,7 +425,7 @@ header:hover #banner {
     left: 0;
     width: 0;
     height: 3px;
-    background: var(--accent-gradient);
+    background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
     transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -433,25 +438,25 @@ header:hover #banner {
     font-size: 1.4rem;
     font-weight: 600;
     margin-top: 1.5rem;
-    color: var(--text-primary);
+    color: #f8fafc;
     transition: all 0.3s ease;
 }
 
 .location {
     font-size: 1rem;
-    color: #4facfe;
+    color: var(--sky-blue);
     margin-bottom: 0.8rem;
     display: inline-block;
     padding: 0.3rem 0.8rem;
-    background: rgba(74, 172, 254, 0.1);
+    background: rgba(96, 165, 250, 0.15);
     border-radius: 6px;
-    border-left: 3px solid #4facfe;
+    border-left: 3px solid var(--electric-blue);
 }
 
 .education-entry, .experience-entry {
     margin-bottom: 2.5rem;
     padding: 1.5rem;
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(15, 23, 42, 0.4);
     border-radius: 12px;
     border-left: 4px solid transparent;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -465,15 +470,15 @@ header:hover #banner {
     top: 0;
     height: 100%;
     width: 4px;
-    background: var(--accent-gradient);
+    background: var(--secondary-gradient);
     transform: scaleY(0);
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .education-entry:hover, .experience-entry:hover {
-    background: rgba(255, 255, 255, 0.06);
+    background: rgba(30, 41, 59, 0.6);
     transform: translateX(10px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.25);
 }
 
 .education-entry:hover::before, .experience-entry:hover::before {
@@ -481,7 +486,7 @@ header:hover #banner {
 }
 
 .education-entry h5, .experience-entry h5 {
-    color: var(--text-secondary);
+    color: #cbd5e1;
     font-size: 0.95rem;
     margin-top: 0.5rem;
     font-weight: 400;
@@ -497,7 +502,7 @@ ul li {
     margin-bottom: 1rem;
     padding-left: 2rem;
     position: relative;
-    color: var(--text-secondary);
+    color: #e2e8f0;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -505,7 +510,7 @@ ul li::before {
     content: '▹';
     position: absolute;
     left: 0;
-    color: #4facfe;
+    color: var(--electric-blue);
     font-size: 1.5rem;
     line-height: 1.2;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -513,28 +518,28 @@ ul li::before {
 
 ul li:hover {
     transform: translateX(8px);
-    color: var(--text-primary);
+    color: var(--off-white);
 }
 
 ul li:hover::before {
-    color: #00f2fe;
+    color: var(--sky-blue);
     transform: translateX(-5px);
 }
 
 ul li a {
-    color: #4facfe;
+    color: var(--sky-blue);
     transition: all 0.3s ease;
 }
 
 ul li a:hover {
-    color: #00f2fe;
-    text-shadow: 0 0 20px rgba(74, 172, 254, 0.5);
+    color: var(--ice-blue);
+    text-shadow: 0 0 20px rgba(96, 165, 250, 0.6);
 }
 
 ul li strong {
-    color: var(--text-primary);
+    color: var(--pure-white);
     font-weight: 600;
-    background: var(--accent-gradient);
+    background: var(--secondary-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -546,9 +551,10 @@ ul li strong {
     font-weight: 500;
     font-size: 1.1rem;
     padding: 2rem;
-    background: var(--glass-bg);
+    background: rgba(30, 41, 59, 0.6);
     border-radius: 16px;
     backdrop-filter: blur(10px);
+    border: 1px solid rgba(148, 163, 184, 0.25);
 }
 
 /* ================== Animations ================== */
@@ -596,9 +602,9 @@ button, .btn {
     border: none;
     cursor: pointer;
     background: var(--primary-gradient);
-    color: #fff;
+    color: var(--pure-white);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.4);
     position: relative;
     overflow: hidden;
 }
@@ -611,7 +617,7 @@ button::before, .btn::before {
     width: 0;
     height: 0;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(96, 165, 250, 0.4);
     transform: translate(-50%, -50%);
     transition: width 0.6s, height 0.6s;
 }
@@ -623,7 +629,7 @@ button:hover::before, .btn:hover::before {
 
 button:hover, .btn:hover {
     transform: translateY(-5px);
-    box-shadow: 0 20px 50px rgba(102, 126, 234, 0.5);
+    box-shadow: 0 20px 50px rgba(37, 99, 235, 0.6), 0 0 40px rgba(96, 165, 250, 0.4);
 }
 
 /* ================== Scrollbar ================== */
@@ -632,7 +638,7 @@ button:hover, .btn:hover {
 }
 
 ::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(30, 41, 59, 0.5);
 }
 
 ::-webkit-scrollbar-thumb {
